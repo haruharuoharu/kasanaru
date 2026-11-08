@@ -164,7 +164,15 @@ const messages={
   "それぞれの考え": "Different perspectives",
   "Kasanaru — ひとつの問いに それぞれの考え": "Kasanaru — One question, different perspectives",
   "まずは、今の考えで答えてください。": "Start by sharing what you think now.",
-  "追加の条件を読んで、あなたの考えを確かめます。": "Read the added conditions and share your view."
+  "追加の条件を読んで、あなたの考えを確かめます。": "Read the added conditions and share your view.",
+  "通知を閉じる": "Dismiss notification",
+  "処理中です…": "Working…",
+  "✓ このタブで照合済み": "✓ Verified in this tab",
+  "開始前のルール：Devnetの記録とファイルが一致しました。": "Rules before voting: the Devnet record matches the file.",
+  "締切後の結果：Devnetの記録とファイルが一致しました。": "Results after closing: the Devnet record matches the file.",
+  "開始前のルール：Devnetへの記録が完了しました。チェーンと照合できます。": "Rules before voting: recorded on Devnet. You can now check against the chain.",
+  "締切後の結果：Devnetへの記録が完了しました。チェーンと照合できます。": "Results after closing: recorded on Devnet. You can now check against the chain.",
+  "ラウンドを更新しました。現在の状態をご確認ください。": "The round was updated. Check the current status."
 };
 const sources=new WeakMap(),attributes=new WeakMap();
 export function translate(text,language){if(language!=='en')return text;const key=text.trim();let translated=messages[key];if(translated===undefined){translated=key.replace(/^認証済み · (.+)$/,(_,s)=>'Authenticated · '+translate(s,'en')).replace(/^初回の回答 · (\d+)人$/,'First round · $1 participants').replace(/^(\d+)\/(\d+)人が回答 · 回答率 (.+)$/,'$1/$2 answered · Response rate $3').replace(/^賛成 (\d+) \/ 回答 (\d+)人$/,'Agree $1 / Answered $2').replace(/^未回答 (\d+)人$/,'No answer $1').replace(/^(賛成|反対|判断保留|未回答) (\d+)$/,(_,s,n)=>messages[s]+' '+n).replace(/^賛成(\d+)、反対(\d+)、保留(\d+)、未回答(\d+)$/,'Agree $1, disagree $2, pass $3, no answer $4');}return text.replace(key,translated);}
